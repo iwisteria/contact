@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="お問い合わせページ - お気軽にご相談ください。迅速かつ丁寧にお答えいたします。">
+    <meta name="keywords" content="お問い合わせ, 相談, サポート, 連絡先, カスタマーサービス">
+    <meta property="og:title" content="お問い合わせ - Contact Us">
+    <meta property="og:description" content="お気軽にお問い合わせください。専門スタッフが迅速にお答えいたします。">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&w=1200&q=80&fm=webp&fit=crop">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/new-gothic-logo-white.png">
+
+    <title>お問い合わせ - Contact Us</title>
+
+    <!-- Tailwind CSS v4.1 -->
+    <script src="https://cdn.tailwindcss.com?v=4.1.0"></script>
+
+    <!-- Animate.css v4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- AOS v2.3 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts - Noto Sans JP for Japanese -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@0.536.0/dist/umd/lucide.js"></script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        /* Navigation transparency effects */
+        .nav-transparent {
+            background-color: transparent;
+        }
+
+        .nav-solid {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Form validation styles */
+        .form-error {
+            border-color: #ef4444;
+        }
+
+        .form-success {
+            border-color: #10b981;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 nav-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="https://busguardian.tokyo" class="flex items-center">
+                        <img src="assets/images/new-gothic-logomark-transparent.png" alt="BusGuardian Logo" class="h-16 mt-5">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100" style="height: 576px;">
+            <div class="absolute inset-0">
+                <img
+                    src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&w=1200&q=80&fm=webp&fit=crop"
+                    alt="Professional business communication"
+                    class="w-full h-full object-cover opacity-20"
+                    loading="lazy"
+                    decoding="async"
+                >
+            </div>
+            <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate__animated animate__fadeInUp">
+                    お問い合わせ
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+                    お気軽にご相談ください。<br>
+                    専門スタッフが迅速かつ丁寧にお答えいたします。
+                </p>
+                <a href="#contact-form" class="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300 animate__animated animate__fadeInUp animate__delay-2s">
+                    <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                    お問い合わせフォームへ
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">お問い合わせフォーム</h2>
+                    <p class="text-lg text-gray-600">下記フォームにご記入の上、送信ボタンを押してください。</p>
+                </div>
+
+                <form id="contact-form-element" class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- お名前 -->
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                                お名前 <span class="text-red-500 text-xs">（必須）</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                placeholder="山田 太郎"
+                            >
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+
+                        <!-- メールアドレス -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                メールアドレス <span class="text-red-500 text-xs">（必須）</span>
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                placeholder="example@email.com"
+                            >
+                            <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- 電話番号 -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                電話番号 <span class="text-gray-500 text-xs">（任意）</span>
+                            </label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                placeholder="090-1234-5678"
+                            >
+                        </div>
+
+                        <!-- 会社名 -->
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">
+                                会社名・団体名 <span class="text-gray-500 text-xs">（任意）</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="company"
+                                name="company"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                placeholder="株式会社サンプル"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- お問い合わせ種別 -->
+                    <div>
+                        <label for="inquiry-type" class="block text-sm font-medium text-gray-700 mb-2">
+                            お問い合わせ種別 <span class="text-red-500 text-xs">（必須）</span>
+                        </label>
+                        <select
+                            id="inquiry-type"
+                            name="inquiry-type"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                        >
+                            <option value="">選択してください</option>
+                            <option value="general">一般的なお問い合わせ</option>
+                            <option value="service">サービスについて</option>
+                            <option value="support">サポート・技術的な問題</option>
+                            <option value="partnership">パートナーシップについて</option>
+                            <option value="media">メディア・取材について</option>
+                            <option value="other">その他</option>
+                        </select>
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+
+                    <!-- メッセージ -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                            メッセージ <span class="text-red-500 text-xs">（必須）</span>
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                            placeholder="お問い合わせ内容をご記入ください..."
+                        ></textarea>
+                        <div class="error-message text-red-500 text-sm mt-1 hidden"></div>
+                    </div>
+
+                    <!-- プライバシーポリシー同意 -->
+                    <div class="flex items-start">
+                        <input
+                            type="checkbox"
+                            id="privacy-agreement"
+                            name="privacy-agreement"
+                            required
+                            class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        >
+                        <label for="privacy-agreement" class="ml-3 text-sm text-gray-700">
+                            プライバシーポリシーに同意する <span class="text-red-500 text-xs">（必須）</span>
+                        </label>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <div class="text-center">
+                        <button
+                            type="submit"
+                            class="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                            送信する
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="mb-4">
+                        <a href="https://busguardian.tokyo" class="text-lg font-bold hover:text-gray-300 transition-colors duration-200">
+                            貸切バス専門行政書士
+                        </a>
+                    </div>
+                    <p class="text-gray-300 mb-4">貸切バス事業の許可申請・更新から各種手続きまで、専門の行政書士がサポートいたします。</p>
+                </div>
+
+                <!-- 許可申請 -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">許可申請</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://busguardian.tokyo/renewal/" class="text-gray-300 hover:text-white transition-colors duration-200">更新許可申請</a></li>
+                        <li><a href="https://busguardian.tokyo/permission/" class="text-gray-300 hover:text-white transition-colors duration-200">新規許可申請</a></li>
+                        <li><a href="https://busguardian.tokyo/legal-test/" class="text-gray-300 hover:text-white transition-colors duration-200">法令試験合格サポート</a></li>
+                    </ul>
+                </div>
+
+                <!-- 各種手続き -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">各種手続き</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://busguardian.tokyo/various-procedures/" class="text-gray-300 hover:text-white transition-colors duration-200">各種手続き一覧</a></li>
+                        <li><a href="https://busguardian.tokyo/garage-site-change/" class="text-gray-300 hover:text-white transition-colors duration-200">車庫の移転・変更・新設</a></li>
+                        <li><a href="https://busguardian.tokyo/office-change/" class="text-gray-300 hover:text-white transition-colors duration-200">営業所の移転・変更・新設</a></li>
+                        <li><a href="https://busguardian.tokyo/resting-facility/" class="text-gray-300 hover:text-white transition-colors duration-200">休憩仮眠施設の移転・変更</a></li>
+                    </ul>
+                </div>
+
+                <!-- 事務所について -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">事務所について</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://busguardian.tokyo/self‐introduction/" class="text-gray-300 hover:text-white transition-colors duration-200">自己紹介</a></li>
+                        <li><a href="https://busguardian.tokyo/success/" class="text-gray-300 hover:text-white transition-colors duration-200">実績</a></li>
+                        <li><a href="https://busguardian.tokyo/knowledge/" class="text-gray-300 hover:text-white transition-colors duration-200">ナレッジ</a></li>
+                        <li><a href="https://busguardian.tokyo/blog/" class="text-gray-300 hover:text-white transition-colors duration-200">ブログ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="flex space-x-6 mb-4 md:mb-0">
+                        <a href="https://busguardian.tokyo/privacy-policy/" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm">プライバシーポリシー</a>
+                        <a href="https://busguardian.tokyo/terms-of-service/" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm">利用規約</a>
+                    </div>
+                    <div class="text-center md:text-right">
+                        <p class="text-gray-400 text-sm mb-2">Copyright © <a href="https://busguardian.tokyo/" class="text-gray-300 hover:text-white transition-colors duration-200">貸切バス専門行政書士</a></p>
+                        <a href="#hero" class="text-gray-300 hover:text-white transition-colors duration-200 text-sm flex items-center justify-center md:justify-end">
+                            <i data-lucide="arrow-up" class="w-4 h-4 mr-1"></i>
+                            PAGE TOP
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('nav-transparent');
+                navbar.classList.add('nav-solid');
+            } else {
+                navbar.classList.remove('nav-solid');
+                navbar.classList.add('nav-transparent');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const chevron = this.querySelector('[data-lucide="chevron-down"]');
+
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    chevron.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    chevron.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Form validation
+        const form = document.getElementById('contact-form-element');
+
+        function showError(input, message) {
+            input.classList.add('form-error');
+            input.classList.remove('form-success');
+            const errorDiv = input.parentNode.querySelector('.error-message');
+            errorDiv.textContent = message;
+            errorDiv.classList.remove('hidden');
+        }
+
+        function showSuccess(input) {
+            input.classList.add('form-success');
+            input.classList.remove('form-error');
+            const errorDiv = input.parentNode.querySelector('.error-message');
+            errorDiv.classList.add('hidden');
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validateForm() {
+            let isValid = true;
+
+            // Name validation
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                showError(name, 'お名前を入力してください。');
+                isValid = false;
+            } else {
+                showSuccess(name);
+            }
+
+            // Email validation
+            const email = document.getElementById('email');
+            if (email.value.trim() === '') {
+                showError(email, 'メールアドレスを入力してください。');
+                isValid = false;
+            } else if (!validateEmail(email.value)) {
+                showError(email, '有効なメールアドレスを入力してください。');
+                isValid = false;
+            } else {
+                showSuccess(email);
+            }
+
+            // Inquiry type validation
+            const inquiryType = document.getElementById('inquiry-type');
+            if (inquiryType.value === '') {
+                showError(inquiryType, 'お問い合わせ種別を選択してください。');
+                isValid = false;
+            } else {
+                showSuccess(inquiryType);
+            }
+
+            // Message validation
+            const message = document.getElementById('message');
+            if (message.value.trim() === '') {
+                showError(message, 'メッセージを入力してください。');
+                isValid = false;
+            } else if (message.value.trim().length < 10) {
+                showError(message, 'メッセージは10文字以上で入力してください。');
+                isValid = false;
+            } else {
+                showSuccess(message);
+            }
+
+            // Privacy agreement validation
+            const privacyAgreement = document.getElementById('privacy-agreement');
+            if (!privacyAgreement.checked) {
+                alert('プライバシーポリシーに同意してください。');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            if (validateForm()) {
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin"></i>送信中...';
+                submitBtn.disabled = true;
+
+                // Simulate form submission (replace with actual form submission logic)
+                setTimeout(() => {
+                    alert('お問い合わせありがとうございます。確認後、ご連絡いたします。');
+                    form.reset();
+
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+
+                    // Re-initialize icons after content change
+                    lucide.createIcons();
+                }, 2000);
+            }
+        });
+
+        // Real-time validation
+        document.getElementById('name').addEventListener('blur', function() {
+            if (this.value.trim() !== '') {
+                showSuccess(this);
+            }
+        });
+
+        document.getElementById('email').addEventListener('blur', function() {
+            if (this.value.trim() !== '' && validateEmail(this.value)) {
+                showSuccess(this);
+            }
+        });
+
+        document.getElementById('inquiry-type').addEventListener('change', function() {
+            if (this.value !== '') {
+                showSuccess(this);
+            }
+        });
+
+        document.getElementById('message').addEventListener('blur', function() {
+            if (this.value.trim() !== '' && this.value.trim().length >= 10) {
+                showSuccess(this);
+            }
+        });
+    </script>
+</body>
+</html>
