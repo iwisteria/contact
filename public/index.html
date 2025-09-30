@@ -129,7 +129,12 @@
                     <p class="text-lg text-gray-600">下記フォームにご記入の上、送信ボタンを押してください。</p>
                 </div>
 
-                <form id="contact-form-element" class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+                <form id="contact-form-element" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-6" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Honeypot field for spam protection -->
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- お名前 -->
                         <div>
@@ -474,28 +479,19 @@
 
         // Form submission
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            if (validateForm()) {
-                // Show loading state
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin"></i>送信中...';
-                submitBtn.disabled = true;
-
-                // Simulate form submission (replace with actual form submission logic)
-                setTimeout(() => {
-                    alert('お問い合わせありがとうございます。確認後、ご連絡いたします。');
-                    form.reset();
-
-                    // Reset button
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-
-                    // Re-initialize icons after content change
-                    lucide.createIcons();
-                }, 2000);
+            if (!validateForm()) {
+                e.preventDefault();
+                return false;
             }
+
+            // Show loading state
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 mr-2 animate-spin"></i>送信中...';
+            submitBtn.disabled = true;
+
+            // Let Netlify handle the form submission
+            // The form will be submitted naturally to Netlify
         });
 
         // Real-time validation
