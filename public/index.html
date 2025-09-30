@@ -247,7 +247,7 @@
                             class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                         >
                         <label for="privacy-agreement" class="ml-3 text-sm text-gray-700">
-                            プライバシーポリシーに同意する <span class="text-red-500 text-xs">（必須）</span>
+                            <a href="#" id="privacy-policy-link" class="text-blue-600 hover:text-blue-800 underline">プライバシーポリシー</a>に同意する <span class="text-red-500 text-xs">（必須）</span>
                         </label>
                     </div>
 
@@ -266,6 +266,119 @@
         </section>
 
     </main>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Background overlay -->
+        <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" id="modal-backdrop"></div>
+
+        <!-- Modal panel -->
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="relative bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+                <!-- Modal header -->
+                <div class="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center">
+                    <h2 id="modal-title" class="text-2xl font-bold text-gray-900">プライバシーポリシー</h2>
+                    <button id="modal-close-btn" class="text-gray-400 hover:text-gray-600 transition-colors" aria-label="閉じる">
+                        <i data-lucide="x" class="w-6 h-6"></i>
+                    </button>
+                </div>
+
+                <!-- Modal content -->
+                <div class="px-6 py-6 overflow-y-auto max-h-[calc(90vh-140px)]">
+                    <div class="prose prose-sm max-w-none">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">1. 基本方針</h3>
+                        <p class="text-gray-700 mb-6">
+                            行政書士伊藤正昭事務所(以下「当事務所」といいます)は、お客様の個人情報を正確かつ安全に取り扱うことを事業運営上の重要事項と位置づけ、個人情報の保護に関する法律、行政書士法、その他の関係法令を遵守し、本プライバシーポリシーに従って個人情報を取り扱います。
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">2. 個人情報の取得</h3>
+                        <p class="text-gray-700 mb-4">
+                            当事務所は、お客様との契約の締結・履行、法的手続きの代行、各種相談業務、セミナー開催、メールマガジンの配信などの目的で、以下のような個人情報を取得することがあります。
+                        </p>
+                        <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-1">
+                            <li>氏名</li>
+                            <li>住所</li>
+                            <li>電話番号</li>
+                            <li>メールアドレス</li>
+                            <li>生年月日</li>
+                            <li>職業</li>
+                            <li>勤務先情報</li>
+                            <li>家族構成</li>
+                            <li>資産状況</li>
+                            <li>その他業務上必要となる情報</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">3. 利用目的</h3>
+                        <p class="text-gray-700 mb-4">
+                            当事務所が取得した個人情報は、以下の目的で利用いたします。
+                        </p>
+                        <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-1">
+                            <li>お客様からのご依頼内容の確認・実施</li>
+                            <li>行政書士業務の遂行(申請書類の作成、提出等)</li>
+                            <li>お客様へのご連絡、お問い合わせへの回答</li>
+                            <li>当事務所のサービスに関する情報提供</li>
+                            <li>セミナー・イベントの案内、実施、管理</li>
+                            <li>契約の締結、履行、管理</li>
+                            <li>料金の請求、支払いの確認</li>
+                            <li>サービス改善のための分析</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">4. 個人情報の第三者提供</h3>
+                        <p class="text-gray-700 mb-4">
+                            当事務所は、以下のいずれかに該当する場合を除き、お客様の個人情報を第三者に提供することはありません。
+                        </p>
+                        <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-1">
+                            <li>お客様の同意がある場合</li>
+                            <li>法令に基づく場合</li>
+                            <li>人の生命、身体または財産の保護のために必要がある場合であって、お客様の同意を得ることが困難であるとき</li>
+                            <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、お客様の同意を得ることが困難であるとき</li>
+                            <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、お客様の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">5. 業務委託先への個人情報の提供</h3>
+                        <p class="text-gray-700 mb-6">
+                            当事務所は、業務を円滑に進めるため、個人情報の取扱いを第三者に委託することがあります。委託先の選定にあたっては、個人情報を適切に取り扱っていると認められる委託先を選定し、委託契約等において個人情報の適正管理・機密保持などによりお客様の個人情報の漏洩防止に必要な事項を取り決め、適切な管理を実施させております。
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">6. 個人情報の安全管理</h3>
+                        <p class="text-gray-700 mb-6">
+                            当事務所は、個人情報の漏洩、滅失またはき損を防止するため、適切なセキュリティ対策を実施し、個人情報を安全に管理するよう努めます。
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">7. 保有個人データの開示等の請求</h3>
+                        <p class="text-gray-700 mb-6">
+                            お客様は、当事務所が保有するお客様ご自身の個人データについて、開示、訂正、追加、削除、利用停止または消去(以下「開示等」といいます)を請求することができます。開示等の請求を行う場合は、下記の「10. お問い合わせ窓口」までご連絡ください。
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">8. Cookieの使用について</h3>
+                        <p class="text-gray-700 mb-4">
+                            当事務所のウェブサイトでは、サイトの利便性向上のためにCookieを使用することがあります。Cookieとは、ウェブサイトを利用したときに、ブラウザとサーバーとの間で送受信した利用履歴や入力内容などを、お客様のコンピュータにファイルとして保存しておく仕組みです。
+                        </p>
+                        <ul class="list-disc pl-6 mb-6 text-gray-700 space-y-1">
+                            <li>Cookieの情報だけでは、お客様個人を特定することはできません。</li>
+                            <li>ブラウザの設定により、Cookieを無効にすることも可能です。</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">9. プライバシーポリシーの変更</h3>
+                        <p class="text-gray-700 mb-6">
+                            当事務所は、必要に応じて本プライバシーポリシーを変更することがあります。変更した場合は、当ウェブサイトに掲載することにより公表いたします。
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">附則</h3>
+                        <p class="text-gray-700">制定日: 2017年4月1日</p>
+                        <p class="text-gray-700 mb-6">最終改定日: 2024年4月1日</p>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="sticky bottom-0 bg-white border-t border-gray-200 px-6 py-4">
+                    <button id="modal-close-footer-btn" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -363,9 +476,11 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -378,7 +493,9 @@
                         block: 'start'
                     });
                     // Close mobile menu if open
-                    mobileMenu.classList.add('hidden');
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                    }
                 }
             });
         });
@@ -516,6 +633,44 @@
         document.getElementById('message').addEventListener('blur', function() {
             if (this.value.trim() !== '' && this.value.trim().length >= 10) {
                 showSuccess(this);
+            }
+        });
+
+        // Privacy Policy Modal functionality
+        const privacyModal = document.getElementById('privacy-modal');
+        const privacyLink = document.getElementById('privacy-policy-link');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const modalCloseFooterBtn = document.getElementById('modal-close-footer-btn');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+
+        // Open modal
+        privacyLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            privacyModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            // Re-initialize Lucide icons for modal content
+            lucide.createIcons();
+        });
+
+        // Close modal function
+        function closeModal() {
+            privacyModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        // Close modal on close button click (header)
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        // Close modal on close button click (footer)
+        modalCloseFooterBtn.addEventListener('click', closeModal);
+
+        // Close modal on backdrop click
+        modalBackdrop.addEventListener('click', closeModal);
+
+        // Close modal on Escape key press
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !privacyModal.classList.contains('hidden')) {
+                closeModal();
             }
         });
     </script>
